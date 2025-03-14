@@ -37,10 +37,10 @@ jobs:
       - name: Commit and push changes
         if: env.CHANGED == 'true'
         run: |
-          git config --global user.name "VillainsRule"
-          git config --global user.email "101288516+VillainsRule@users.noreply.github.com"
+          git config --global user.name "yolkbot"
+          git config --global user.email "octocat@github.com"
           git add ./src/constants/items.js ./src/constants/maps.js
-          git commit -m "update maps/items"
+          git commit -m "update maps & items" -m "this is an automatic commit that updates map and/or item data."
           git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
